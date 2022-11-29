@@ -37,8 +37,8 @@ const RegistrationScreen = () => {
   }, []);
   
   const [fontsLoaded] = useFonts({
-    "Roboto-Regular": require("./assets/fonts/Roboto/Roboto-Regular.ttf"),
-    "Roboto-Medium": require("./assets/fonts/Roboto/Roboto-Medium.ttf"),
+    "Roboto-Regular": require("../assets/fonts/Roboto/Roboto-Regular.ttf"),
+    "Roboto-Medium": require("../assets/fonts/Roboto/Roboto-Medium.ttf"),
   });
 
    const onLayoutRootView = useCallback(async () => {
@@ -65,7 +65,7 @@ const RegistrationScreen = () => {
   return (
     <TouchableWithoutFeedback onPress={keyboardHide}>
       <View style={styles.container} onLayout={onLayoutRootView}>
-        <ImageBackground source={require("./assets/images/main-bg.jpg")} resizeMode="cover" style={styles.image}>
+        <ImageBackground source={require("../assets/images/main-bg.jpg")} resizeMode="cover" style={styles.image}>
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 0}>
           <View style={{ ...styles.form, width: dimensions + 40 }}>
             <View style={styles.formTitleBox}>

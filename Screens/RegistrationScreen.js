@@ -23,8 +23,8 @@ const initialState = {
   password: ''
 };
 
-export default function App() {
-  const [isOpenKeyboard, setIsOpenKeyboard] = useState(false);
+const RegistrationScreen = () => {
+    const [isOpenKeyboard, setIsOpenKeyboard] = useState(false);
   const [state, setState] = useState(initialState);
   const [dimensions, setDimensions] = useState(Dimensions.get("window").width-20*2);
 
@@ -164,3 +164,5 @@ const styles = StyleSheet.create({
     color: '#1B4371',
   }
 });
+
+export default RegistrationScreen;

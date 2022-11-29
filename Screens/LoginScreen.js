@@ -18,13 +18,12 @@ import * as SplashScreen from 'expo-splash-screen';
 SplashScreen.preventAutoHideAsync();
 
 const initialState = {
-  login: '',
   email: '',
   password: ''
 };
 
-export default function App() {
-  const [isOpenKeyboard, setIsOpenKeyboard] = useState(false);
+const LoginScreen = () => {
+    const [isOpenKeyboard, setIsOpenKeyboard] = useState(false);
   const [state, setState] = useState(initialState);
   const [dimensions, setDimensions] = useState(Dimensions.get("window").width-20*2);
 
@@ -69,15 +68,8 @@ export default function App() {
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 0}>
           <View style={{ ...styles.form, width: dimensions + 40 }}>
             <View style={styles.formTitleBox}>
-              <Text style={styles.formTitle}>Регистрация</Text>
+              <Text style={styles.formTitle}>Войти</Text>
             </View>
-            <TextInput
-              style={{...styles.input, width: dimensions}}
-              placeholder={"Логин"}
-              onFocus={() => setIsOpenKeyboard(true)}
-              value={state.login}
-              onChangeText={(value)=>setState((prevState)=>({...prevState, login: value}))}
-            />
             <TextInput
               style={{...styles.input, width: dimensions}}
               placeholder={"Адрес электронной почты"}
@@ -98,7 +90,7 @@ export default function App() {
               activeOpacity={0.8}
               onPress={onSubmit}
             >
-              <Text style={styles.buttonText}>Зарегистрироваться</Text>
+              <Text style={styles.buttonText}>Войти</Text>
             </TouchableOpacity>
             <View style={{ ...styles.linkBox, marginBottom: isOpenKeyboard ? 16 : 100 }}>
               <Text style={styles.linkText}>Нет аккаунта? Зарегистрироваться</Text>
@@ -164,3 +156,5 @@ const styles = StyleSheet.create({
     color: '#1B4371',
   }
 });
+
+export default LoginScreen;
